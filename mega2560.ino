@@ -28,8 +28,8 @@ void loop() {
   a1 = 1;
   a2 = 0;
   a3 = 1;
-  while (Serial3.available()) {
-  char content = (char)Serial3.read();
+  while (Serial2.available()) {
+  char content = (char)Serial2.read();
   if (content == 'g') {
       Send_Data();   
     } 
