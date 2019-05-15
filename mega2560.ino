@@ -15,7 +15,7 @@ int b1, b2, b3;
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
-  Serial3.begin(9600);
+  Serial2.begin(9600);
   pinMode(led1, OUTPUT);
   digitalWrite(led1, HIGH);
   pinMode(led2, OUTPUT);
@@ -37,27 +37,27 @@ void loop() {
       Receive_Status();
         if ((MSB_status == 6) && (LSB_status == 38)) {
           if ( b1 == 0) {
-          //digitalWrite(led1, LOW);
+          digitalWrite(led1, LOW);
           Serial.println("den 1 sang");
           }
           else if ( b1 == 1) {
-          //digitalWrite(led1, HIGH);
+          digitalWrite(led1, HIGH);
           Serial.println("den 1 tat");
           }
           else if ( b2 == 0) {
-         // digitalWrite(led2, LOW);
+          digitalWrite(led2, LOW);
           Serial.println("den 2 sang");
           }
           else if ( b2 == 1){
-         // digitalWrite(led2, HIGH);
+          digitalWrite(led2, HIGH);
           Serial.println("den 2 tat");
           }
           else if ( b3 == 0) {
-         // digitalWrite(led3, LOW);
+          digitalWrite(led3, LOW);
           Serial.println("den 3 sang");
           }
           else if ( b3 == 1){
-         // digitalWrite(led3, HIGH);
+          digitalWrite(led3, HIGH);
           Serial.println("den 3 tat");
           }
         }
@@ -97,19 +97,19 @@ void loop() {
 }
 
 void Receive_Status() {
-  MSB_status = Serial3.read();
-  b1 = Serial3.read();
-  b2 = Serial3.read();
-  b3 = Serial3.read();
-  LSB_status = Serial3.read();
+  MSB_status = Serial2.read();
+  b1 = Serial2.read();
+  b2 = Serial2.read();
+  b3 = Serial2.read();
+  LSB_status = Serial2.read();
 
 }
 
 void Send_Data() {
-  Serial3.write(MSB_send);
-  Serial3.write(a1);
-  Serial3.write(a2);
-  Serial3.write(a3);
-  Serial3.write(LSB_send);
+  Serial2.write(MSB_send);
+  Serial2.write(a1);
+  Serial2.write(a2);
+  Serial2.write(a3);
+  Serial2.write(LSB_send);
 
 }
