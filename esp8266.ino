@@ -64,9 +64,9 @@ void loop() {
   n1 = Firebase.getString("den_1");
   n2 = Firebase.getString("den_2");
   n3 = Firebase.getString("den_3");
-  Serial.println(n1.toInt());
-  Serial.println(n2.toInt());
-  Serial.println(n3.toInt());
+ // Serial.println(n1.toInt());
+  //Serial.println(n2.toInt());
+  //Serial.println(n3.toInt());
   n_1 = n1.toInt();
   n_2 = n2.toInt();
   n_3 = n3.toInt();
